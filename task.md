@@ -6,19 +6,19 @@
     - [x] Data Simulation Interface <!-- id: 4 -->
     - [x] Edge Model Loading <!-- id: 5 -->
 - [ ] Phase 2: Agent Node Definition <!-- id: 6 -->
-    - [ ] Vision Analysis Node <!-- id: 7 -->
-    - [ ] Audio Analysis Node <!-- id: 8 -->
-    - [ ] Threat Assessment LLM Agent <!-- id: 9 -->
-    - [ ] Action Agent <!-- id: 10 -->
-- [ ] Phase 3: Orchestration (LangGraph) <!-- id: 11 -->
-    - [ ] Define Agent State <!-- id: 12 -->
-    - [ ] Build the Graph <!-- id: 13 -->
-    - [ ] Implement Main Cycle <!-- id: 14 -->
-    - [ ] Conditional Routing <!-- id: 15 -->
-- [ ] Phase 4: Observability & Testing <!-- id: 16 -->
-    - [ ] Observability Setup (Langfuse) <!-- id: 17 -->
-    - [ ] Multimodal Latency Tracking <!-- id: 18 -->
-    - [ ] Evaluation Suite <!-- id: 19 -->
-- [ ] Phase 5: Deployment <!-- id: 20 -->
-    - [ ] Service API (FastAPI) <!-- id: 21 -->
-    - [ ] Containerization (Docker) <!-- id: 22 -->
+    - [x] Vision Analysis Node <!-- id: 7 -->
+    - [x] Audio Analysis Node <!-- id: 8 -->
+    - [x] Threat Assessment LLM Agent <!-- id: 9 -->
+    - [x] Action Agent <!-- id: 10 -->
+- [x] Phase 3: Orchestration (LangGraph) <!-- id: 11 -->
+    - [x] Define Agent State <!-- id: 12 -->
+    - [x] Build the Graph <!-- id: 13 -->
+    - [x] Implement Main Cycle <!-- id: 14 -->
+    - [x] Conditional Routing <!-- id: 15 -->
+- [x] Phase 4: Observability & Testing <!-- id: 16 -->
+    - [x] Observability Setup (Langfuse) <!-- id: 17 -->
+    - [x] Multimodal Latency Tracking <!-- id: 18 -->
+    - [x] Evaluation Suite <!-- id: 19 -->
+- [x] Phase 5: Deployment <!-- id: 20 -->
+    - [x] Service API (FastAPI) <!-- id: 21 -->
+    - [x] Containerization (Docker) <!-- id: 22 -->
