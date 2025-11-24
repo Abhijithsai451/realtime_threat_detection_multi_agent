@@ -1,0 +1,11 @@
+torch
+fastapi
+uvicorn
+pydantic
+langgraph
+langchain
+langfuse
+opencv-python
+numpy
+scipy
+pytest

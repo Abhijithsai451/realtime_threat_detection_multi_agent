@@ -1,0 +1,24 @@
+# Tasks
+
+- [x] Phase 1: Foundational Setup <!-- id: 1 -->
+    - [x] Project Setup & DL Frameworks <!-- id: 2 -->
+    - [x] Structured Output Schema (Pydantic) <!-- id: 3 -->
+    - [x] Data Simulation Interface <!-- id: 4 -->
+    - [x] Edge Model Loading <!-- id: 5 -->
+- [ ] Phase 2: Agent Node Definition <!-- id: 6 -->
+    - [ ] Vision Analysis Node <!-- id: 7 -->
+    - [ ] Audio Analysis Node <!-- id: 8 -->
+    - [ ] Threat Assessment LLM Agent <!-- id: 9 -->
+    - [ ] Action Agent <!-- id: 10 -->
+- [ ] Phase 3: Orchestration (LangGraph) <!-- id: 11 -->
+    - [ ] Define Agent State <!-- id: 12 -->
+    - [ ] Build the Graph <!-- id: 13 -->
+    - [ ] Implement Main Cycle <!-- id: 14 -->
+    - [ ] Conditional Routing <!-- id: 15 -->
+- [ ] Phase 4: Observability & Testing <!-- id: 16 -->
+    - [ ] Observability Setup (Langfuse) <!-- id: 17 -->
+    - [ ] Multimodal Latency Tracking <!-- id: 18 -->
+    - [ ] Evaluation Suite <!-- id: 19 -->
+- [ ] Phase 5: Deployment <!-- id: 20 -->
+    - [ ] Service API (FastAPI) <!-- id: 21 -->
+    - [ ] Containerization (Docker) <!-- id: 22 -->

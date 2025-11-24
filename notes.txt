@@ -1,0 +1,69 @@
+------------------------------------------------------------------------------------------------------------------------
+Multimodal AI for Real-Time Threat Detection Agent
+------------------------------------------------------------------------------------------------------------------------
+This project combines deep learning (computer vision/audio) with LLMs for real-time analysis, requiring a sophisticated
+        data pipeline and domain-specific knowledge.
+Goal: A real-time surveillance agent for a specific environment (e.g., a smart factory floor or home security system)
+        that analyzes video frames and audio streams to detect anomalies and flag risks.
+------------------------------------------------------------------------------------------------------------------------
+Key Pipeline Components (Agent Nodes):
+------------------------------------------------------------------------------------------------------------------------
+
+* Vision Deep Learning Model (CNN/Transformer): Identifies objects, anomalies, or unsafe acts (e.g., an employee not
+        wearing a helmet).
+* Audio Deep Learning Model (Wav2Vec/Spectrogram CNN): Detects anomalous sounds (e.g., machinery fault, broken
+        window).
+* Threat Assessment LLM Agent: Receives structured output (JSON) from the DL models and uses its reasoning to
+        formulate a detailed alert.
+* Action Agent: Uses tool-calling to send a priority notification or trigger a simulated shutdown protocol based
+        on the severity assessed by the LLM.
+* Core Skills Showcased: Multimodal AI integration, deploying specialized Deep Learning models, custom tool
+        development, real-time data streaming (simulated), and LLM reasoning on structured data.
+------------------------------------------------------------------------------------------------------------------------
+TODO:
+------------------------------------------------------------------------------------------------------------------------
+Phase 1: Foundational Setup (Environment and Data Interfacing)
+1. Project Setup & DL Frameworks -> Install PyTorch/TensorFlow, Uvicorn/FastAPI, and core LLM dependencies.
+2. Structured Output Schema -> Define Pydantic models for multimodal inputs (e.g., `MultimodalEvent`, `ThreatAssessment`).
+3. Data Simulation Interface -> Implement a module to simulate reading real-time video frames and audio chunks.
+4. Edge Model Loading -> Implement functions to load pre-trained/simulated Vision and Audio DL models.
+
+
+Phase 2: Agent Node Definition (DL and LLM Pipeline)
+2.1 Vision Analysis Node: Receives a video frame. Focus: Runs the Vision DL Model, outputs structured data (JSON) detailing
+object detection/anomalies found.
+2.2 Audio Analysis Node: Receives an audio chunk. Focus: Runs the Audio DL Model, outputs structured data (JSON) detailing
+anomalous sounds/events.
+2.3 Threat Assessment LLM Agent: Receives combined JSON reports from both DL nodes.
+Focus: Uses complex reasoning
+        to correlate events (e.g., "object *fall* detected by vision + *loud crash* detected by audio") and determine the
+        final threat level.
+2.4 Action Agent: Receives the final, critical threat level from the LLM. Focus: Executes tool calls based on the
+        severity (e.g., log alert, send priority notification, trigger shutdown protocol).
+Tool Use (Function Calling), LLM Reasoning on Structured Data.
+
+
+Phase 3: Orchestration and Conditional Logic (LangGraph)
+3.1 Define the State: Create the main Pydantic class (`AgentState`) to hold multimodal data, DL outputs (JSON),
+threat level, and action history.
+3.2 Build the Graph: Instantiate the LangGraph StateGraph and add all four nodes (Vision, Audio, Threat Assessment, Action).
+3.3 Implement the Main Cycle: Define the sequence: Vision/Audio run, fan-in to Threat Assessment LLM, then route to the
+Action Agent.
+3.4 Conditional Routing (Severity Check): Create the critical conditional edge: If Threat Assessment LLM output is below a
+critical threshold, END; otherwise, route the flow to the Action Agent.
+
+
+Phase 4: Observability, Testing and Refinement (LLMOPS)
+4.1 Observability Setup: Integrate **Langfuse** to track the full trace of the LLM's reasoning on structured data and the
+latency of the DL model calls.
+4.2 Multimodal Latency Tracking: Implement custom metrics to monitor the end-to-end delay from simulated sensor input to
+final action.
+4.3 Evaluation Suite: Create test scenarios (JSON/simulated input data) representing various threat levels (minor,
+moderate, critical). Benchmark the LLM's reasoning and the Action Agent's correctness.
+
+
+Phase 5: Deployment
+5.1 Service API: Wrap the final LangGraph runner with a **FastAPI** endpoint that accepts simulated sensor data and returns
+the assessment and action taken.
+5.2 Containerization: Create a **Dockerfile** that includes all Python dependencies, **DL model weights**, and the FastAPI
+application code, packaging the entire multimodal system.
